@@ -19,4 +19,7 @@ export default {
 
 <style>
 
+  @import "assets/css/base.css"
+  /* @import url("assets/css/base.css"); */
+
 </style>
