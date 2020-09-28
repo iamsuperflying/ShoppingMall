@@ -6,11 +6,20 @@
       </div>
     </navigation-bar>
 
-    <swiper>
+    <!-- <swiper>
       <swiper-item v-for="banner in banners :key="banner.acm" :label="banner.title" :value="banner.link>
-        
+        <a :href="banner.link">
+          <img :src="banner.img" alt=""/>
+        </a>
       </swiper-item>
-    </swiper>
+    </swiper> -->
+
+    <swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+      <swipe-item>1</swipe-item>
+      <swipe-item>2</swipe-item>
+      <swipe-item>3</swipe-item>
+      <swipe-item>4</swipe-item>
+    </swipe>
 
 
   </div>
@@ -20,13 +29,17 @@
 
 import NavigationBar from "@/components/common/Nav/NavigationBar"
 import {getHomeMultidata} from "@/network/home/homeApi"
-import {Swiper, SwiperItem} from "@/components/common/swiper"
+import { Swipe, SwipeItem } from 'vant'
+
+// import {Swiper, SwiperItem} from "@/components/common/swiper"
 export default {
   name: "Home",
   components: {
     NavigationBar,
-    Swiper,
-    SwiperItem
+    Swipe,
+    SwipeItem
+    // Swiper,
+    // SwiperItem
   },
 
   data() {
@@ -55,6 +68,14 @@ export default {
 
   .home-nav {
     background-color: var(--color-tint);
+  }
+
+  .my-swipe .van-swipe-item {
+    color: #fff;
+    font-size: 20px;
+    line-height: 150px;
+    text-align: center;
+    background-color: #39a9ed;
   }
 
 </style>
